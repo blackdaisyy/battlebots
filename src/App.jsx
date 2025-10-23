@@ -8,7 +8,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8001/bots")
+    fetch("http://localhost:3000/bots")
       .then((response) => response.json())
       .then((data) => {
         console.log("Loaded bots:", data);
@@ -32,7 +32,7 @@ function App() {
   };
 
   const dischargeBot = (botId) => {
-    fetch(`http://localhost:8001/bots/${botId}`, {
+    fetch(`http://localhost:3000/bots/${botId}`, {
       method: "DELETE",
     })
       .then(() => {
